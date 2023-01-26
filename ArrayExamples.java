@@ -38,6 +38,21 @@ public class ArrayExamples {
     return sum / (arr.length - 1);
   }
 
+  static double averageWithoutLowestFixed(double[] arr) {
+    if(arr.length < 2) { return 0.0; }
+    double lowest = arr[0];
+    for(double num: arr) {
+      if(num < lowest) { lowest = num; }
+    }
+    double sum = 0;
+    int count = 0;
+    for(double num: arr) {
+      if(num != lowest) { sum += num; }
+      else {count++;}
+    }
+    return sum / (arr.length - count);
+  }
+
 
 }
 
